@@ -19,7 +19,7 @@ export const contactUs = (name, email, message) => async (dispatch) => {
 
         dispatch({type: "contactsuccess", payload: data.message})
     } catch (error) {
-        dispatch({type: "contactFail", payload: error.response.data.message })
+        dispatch({type: "contactFail", payload: error?.response?.data?.message })
     }
 }
 
@@ -40,6 +40,6 @@ export const courseRequest = (name, email, course) => async (dispatch) => {
 
         dispatch({type: "courseRequestsuccess", payload: data.message})
     } catch (error) {
-        dispatch({type: "courseRequestFail", payload: error.response.data.message })
+        dispatch({type: "courseRequestFail", payload: error?.response?.data?.message })
     }
 }

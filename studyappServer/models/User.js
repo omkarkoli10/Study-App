@@ -95,4 +95,4 @@ userSchema.methods.getResetToken =  function (){
 }
 
 
-module.exports = mongoose.model("User", userSchema);
+module.exports = mongoose.models.users || mongoose.model("User", userSchema);

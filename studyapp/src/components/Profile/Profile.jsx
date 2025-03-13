@@ -1,8 +1,12 @@
-import { Avatar, Button, Container, HStack, Heading, Image, Input, Stack, Text, VStack, useDisclosure } from '@chakra-ui/react'
-import React, { useEffect } from 'react'
-import { Link} from "react-router-dom"
-import { RiDeleteBin7Fill } from 'react-icons/ri'
-import { useState } from 'react'
+import React, { useEffect } from "react";
+import toast from "react-hot-toast";
+import { Avatar, Button, Container, HStack, Heading, Input, Stack, Text, VStack, useDisclosure } from "@chakra-ui/react";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { updateProfilePicture } from "../../redux/actions/profile";
+import { cancelSubscription, loadUser } from "../../redux/actions/user";
+
 import {
   Modal,
   ModalOverlay,
@@ -12,10 +16,6 @@ import {
   ModalBody,
   ModalCloseButton,
 } from '@chakra-ui/react'
-import { useDispatch, useSelector } from 'react-redux'
-import { removeFromPlaylist, updateProfilePicture } from '../../redux/actions/profile'
-import { cancelSubscription, loadUser } from '../../redux/actions/user'
-import toast from 'react-hot-toast'
 const fileUploadStyle = {
   "&::file-selector-button": {
       marginRight: "20px",
@@ -87,15 +87,7 @@ const Profile = ({user}) => {
     await dispatch(updateProfilePicture(myForm));
 
     dispatch(loadUser());
-  }
-
-  const removeFromPlaylistHandler = async (id) => {
-     await dispatch(removeFromPlaylist(id))
-      dispatch(loadUser());
-  }
-
-
-  
+  }  
   
   return (
     <Container minH={"95vh"} maxW={"container.lg"} py="8" >
@@ -150,45 +142,12 @@ const Profile = ({user}) => {
               </Link>
             </Stack>
           </VStack>
-        </Stack>
-
-        <Heading children="Playlist" size={"md"} my="8" />
-
-        {user.playlist.length > 0 && 
-          <Stack direction={["column", "row"]} alignItems={"center"} flexWrap={"wrap"} p="4" >
-            
-
-            {
-              user.playlist.map((element, index) => (
-                <VStack w="48" m="2" key={element.course}>
-                  <Image boxSize={"full"} objectFit="contain" src={element.poster} />
-                  <HStack justifyContent={"space-between"} >
-                    <Link to={`/course/${element.course}`}>
-                    <Button size={"sm"} color={"aqua"}  >
-                      Watch Now
-                    </Button>
-                    </Link>
-
-                    <Button onClick={() => removeFromPlaylistHandler(element.course)} >
-                      <RiDeleteBin7Fill size={"16"} />
-                    </Button>
-                  </HStack>
-                </VStack>
-              ))
-            }
-          </Stack>
-        }
+        </Stack>      
         <ChangePhotosBox changeImageSubmitHandler={changeImageSubmitHandler} isOpen={isOpen} onClose={onClose} loading={loading} />
     </Container>
   )
 }
-
 export default Profile;
-
-
-
-
-
 
 function ChangePhotosBox({isOpen, onClose, changeImageSubmitHandler, loading}){
     const [imagePrev, setImagePrev] = useState("");

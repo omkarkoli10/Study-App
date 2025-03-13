@@ -1,11 +1,12 @@
-import React from 'react'
-import { Heading, Stack, VStack, Text, Button, Image, Box, HStack, useColorMode } from '@chakra-ui/react';
-import "./home.css"
-import { Link } from 'react-router-dom';
-import vg from "../../assets/images/bg3.jfif"
-import { CgGoogle, CgYoutube } from "react-icons/cg"
-import {SiCoursera, SiUdemy} from "react-icons/si"
-import {DiAws} from "react-icons/di"
+import "./home.css";
+import React from "react";
+import vg from "../../assets/images/bg3.jfif";
+import { Box, Button, HStack, Heading, Image, Stack, Text, VStack, useColorMode } from "@chakra-ui/react";
+import { CgGoogle, CgYoutube } from "react-icons/cg";
+import { DiAws } from "react-icons/di";
+import { SiCoursera, SiUdemy } from "react-icons/si";
+import { Link } from "react-router-dom";
+
 // import introVideo from "../../assets/videos/intro.mp4"
 const Home = () => {
   return <section className='home' >
@@ -48,7 +49,7 @@ const Home = () => {
 
     <div className="container2">
         <video
-        src={"https://res.cloudinary.com/dwna7axtx/video/upload/v1691219098/intro_qybxye.mp4"}
+        src={"https://cdn.pixabay.com/video/2023/04/15/159029-818026300_large.mp4"}
         autoPlay={true}
         controls={true}
         controlsList='nodownload nofullscreen noremoteplay'

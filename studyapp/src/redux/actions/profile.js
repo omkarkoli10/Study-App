@@ -16,7 +16,7 @@ export const updateProfile = (name, email) => async (dispatch) => {
 
         dispatch({type: "updateProfileSuccess", payload: data.message})
     } catch (error) {
-        dispatch({type: "updateProfileFail", payload: error.response.data.message })
+        dispatch({type: "updateProfileFail", payload: error?.response?.data?.message })
     }
 }
 
@@ -35,7 +35,7 @@ export const changePassword = (oldPassword, newPassword) => async (dispatch) => 
 
         dispatch({type: "changePasswordSuccess", payload: data.message})
     } catch (error) {
-        dispatch({type: "changePasswordFail", payload: error.response.data.message })
+        dispatch({type: "changePasswordFail", payload: error?.response?.data?.message })
     }
 }
 
@@ -52,7 +52,7 @@ export const updateProfilePicture = (formdata) => async (dispatch) => {
 
         dispatch({type: "updateProfilePictureSuccess", payload: data.message})
     } catch (error) {
-        dispatch({type: "updateProfilePictureFail", payload: error.response.data.message })
+        dispatch({type: "updateProfilePictureFail", payload: error?.response?.data?.message })
     }
 }
 
@@ -71,7 +71,7 @@ export const forgetPassword = (email) => async (dispatch) => {
 
         dispatch({type: "forgetPasswordSuccess", payload: data.message})
     } catch (error) {
-        dispatch({type: "forgetPasswordFail", payload: error.response.data.message })
+        dispatch({type: "forgetPasswordFail", payload: error?.response?.data?.message })
     }
 }
 
@@ -91,7 +91,7 @@ export const resetPassword = (token, password) => async (dispatch) => {
 
         dispatch({type: "resetPasswordSuccess", payload: data.message})
     } catch (error) {
-        dispatch({type: "resetPasswordFail", payload: error.response.data.message })
+        dispatch({type: "resetPasswordFail", payload: error?.response?.data?.message })
     }
 }
 
@@ -108,7 +108,7 @@ export const addToPlaylist = (id) => async (dispatch) => {
 
         dispatch({type: "addToPlaylistSuccess", payload: data.message})
     } catch (error) {
-        dispatch({type: "addToPlaylistFail", payload: error.response.data.message })
+        dispatch({type: "addToPlaylistFail", payload: error?.response?.data?.message })
     }
 }
 
@@ -124,6 +124,6 @@ export const removeFromPlaylist = (id) => async (dispatch) => {
 
         dispatch({type: "removeFromPlaylistSuccess", payload: data.message})
     } catch (error) {
-        dispatch({type: "removeFromToPlaylistFail", payload: error.response.data.message })
+        dispatch({type: "removeFromToPlaylistFail", payload: error?.response?.data?.message })
     }
 }

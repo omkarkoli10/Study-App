@@ -1,33 +1,34 @@
-import React, {useEffect} from 'react';
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
-import Home from "./components/Home/Home"
-import Header from './components/Layout/Header/header';
-import Courses from './components/Courses/Courses';
-import Footer from './components/Layout/Footer/Footer';
-import Login from './components/Auth/Login';
-import Register from './components/Auth/Register';
-import ForgetPassword from './components/Auth/ForgetPassword';
-import ResetPassword from './components/Auth/ResetPassword';
-import Contact from './components/Contact/Contact';
-import Request from './components/Request/Request';
-import About from './components/About/About';
-import NoteFound from './components/Layout/NotFound/NoteFound';
-import PaymentSuccess from './components/Payments/PaymentSuccess';
-import PaymentFail from './components/Payments/PaymentFail';
-import Subscribe from './components/Payments/Subscribe';
-import Coursepage from './components/CoursePage/Coursepage';
-import Profile from './components/Profile/Profile';
-import ChangePassword from './components/Profile/ChangePassword';
-import UpdateProfile from './components/Profile/UpdateProfile';
-import Dashboard from './components/Admin/Dashboard/Dashboard';
-import CreateCourse from './components/Admin/Createcourse/CreateCourse';
-import AdminCourses from './components/Admin/AdminCourses/AdminCourses';
-import AdminUsers from './components/Admin/AdminUsers/AdminUsers';
-import { useDispatch, useSelector } from 'react-redux';
-import toast, {Toaster} from "react-hot-toast";
-import { loadUser } from './redux/actions/user';
-import {ProtectedRoute} from "protected-route-react"
-import Loader from './components/Layout/Loader/Loader';
+import About from "./components/About/About";
+import AdminCourses from "./components/Admin/AdminCourses/AdminCourses";
+import AdminUsers from "./components/Admin/AdminUsers/AdminUsers";
+import ChangePassword from "./components/Profile/ChangePassword";
+import Contact from "./components/Contact/Contact";
+import Coursepage from "./components/CoursePage/Coursepage";
+import Courses from "./components/Courses/Courses";
+import CreateCourse from "./components/Admin/Createcourse/CreateCourse";
+import Dashboard from "./components/Admin/Dashboard/Dashboard";
+import Footer from "./components/Layout/Footer/Footer";
+import ForgetPassword from "./components/Auth/ForgetPassword";
+import Header from "./components/Layout/Header/header";
+import Home from "./components/Home/Home";
+import Loader from "./components/Layout/Loader/Loader";
+import Login from "./components/Auth/Login";
+import NoteFound from "./components/Layout/NotFound/NoteFound";
+import PaymentFail from "./components/Payments/PaymentFail";
+import PaymentSuccess from "./components/Payments/PaymentSuccess";
+import Profile from "./components/Profile/Profile";
+import React, { useEffect } from "react";
+import Register from "./components/Auth/Register";
+import Request from "./components/Request/Request";
+import ResetPassword from "./components/Auth/ResetPassword";
+import Subscribe from "./components/Payments/Subscribe";
+import UpdateProfile from "./components/Profile/UpdateProfile";
+import toast, { Toaster } from "react-hot-toast";
+import { ProtectedRoute } from "protected-route-react";
+import { useDispatch, useSelector } from "react-redux";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { loadUser } from "./redux/actions/user";
+
 function App() {
   // window.addEventListener("contextmenu", (e) => {
   //   e.preventDefault();

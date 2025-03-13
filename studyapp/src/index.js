@@ -12,14 +12,12 @@ const root = ReactDOM.createRoot(container);
 
 
 root.render(
-  <StrictMode>
     <ReduxProvider store={store} >
-    <ChakraProvider theme={theme}>
-      <ColorModeScript initialColorMode={theme.config.initialColorMode} />
-      <App />
-    </ChakraProvider>
+      <ChakraProvider theme={theme}>
+        <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+        <App />
+      </ChakraProvider>
    </ReduxProvider>
-  </StrictMode>
    
     
 );

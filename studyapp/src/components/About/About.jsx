@@ -1,28 +1,42 @@
-import { Avatar, Box, Button, Container, HStack, Heading, Stack, Text, VStack } from '@chakra-ui/react'
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import data from "../../assets/docs/TermsAndConditions";
+import { Avatar, Box, Button, Container, HStack, Heading, Stack, Text, VStack } from "@chakra-ui/react";
+import { RiSecurePaymentFill } from "react-icons/ri";
+import { Link } from "react-router-dom";
+
 // import introVideo from "../../assets/videos/intro.mp4"
-import { RiSecurePaymentFill } from 'react-icons/ri'
-import data from "../../assets/docs/TermsAndConditions"
 const Founder = () => (
     <Stack  border={"aqua"} direction={["column", "row"]} spacing={["8", "16"]} padding={"8"} >
         <VStack >
-            <Avatar  src='https://res.cloudinary.com/dwna7axtx/image/upload/v1689922950/1639911330663_gp3s77.png' boxSize={["40", "48"]} />
+            <Avatar  src='' boxSize={["40", "48"]} />
             <Text size={"md"} children="Co-founder" opacity={0.7}  />
         </VStack>
 
         <VStack justifyContent={"center"} alignItems={["center", "flex-start"]} >
-            <Heading children="Hrushikesh Mysala" size={["md","xl"]} />
+            <Heading children="Bishal Das" size={["md","xl"]} />
             <Text textAlign={["center", "left"]} children={`I am a full-stack developer. 
             Our mission is to provide quality content at reasonable price`} />
         </VStack>
+
+        <VStack >
+            <Avatar  src='' boxSize={["40", "48"]} />
+            <Text size={"md"} children="Co-founder" opacity={0.7}  />
+        </VStack>
+
+        <VStack justifyContent={"center"} alignItems={["center", "flex-start"]} >
+            <Heading children="Omkar Koli" size={["md","xl"]} />
+            <Text textAlign={["center", "left"]} children={`I am a Back-End developer. 
+            Our mission is to provide quality content at reasonable price`} />
+        </VStack>
     </Stack>
+    
+    
 )
 
 const VideoPlayer = () => {
     return <Box>
         <video
-        src={"https://res.cloudinary.com/dwna7axtx/video/upload/v1691219098/intro_qybxye.mp4"}
+        src={"https://cdn.pixabay.com/video/2021/01/03/61037-497754241_large.mp4"}
         autoPlay={true}
         muted={true}
         loop

@@ -6,7 +6,7 @@ const catchAsyncError = require("./middlewares/catchAsyncErrors");
 const nodecron = require("node-cron");
 const Stats = require("./models/Stats");
 
-connectDB();
+connectDB()
 
 cloudinary.v2.config({
     cloud_name: process.env.CLOUDINARY_CLIENT_NAME,

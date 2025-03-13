@@ -14,7 +14,7 @@ export const createCourse = (formdata) => async (dispatch) => {
 
         dispatch({type: "createcourseSuccess", payload: data.message})
     } catch (error) {
-        dispatch({type: "createcourseFail", payload: error.response.data.message })
+        dispatch({type: "createcourseFail", payload: error?.response?.data?.message })
     }
 }
 
@@ -30,7 +30,7 @@ export const deleteCourse = (id) => async (dispatch) => {
 
         dispatch({type: "deletecourseSuccess", payload: data.message})
     } catch (error) {
-        dispatch({type: "deletecourseFail", payload: error.response.data.message })
+        dispatch({type: "deletecourseFail", payload: error?.response?.data?.message })
     }
 }
 
@@ -47,7 +47,7 @@ export const addLecture = (id, formdata) => async (dispatch) => {
 
         dispatch({type: "addLectureSuccess", payload: data.message})
     } catch (error) {
-        dispatch({type: "addLectureFail", payload: error.response.data.message })
+        dispatch({type: "addLectureFail", payload: error?.response?.data?.message })
     }
 }
 
@@ -62,7 +62,7 @@ export const deleteLecture = (courseId, lectureId) => async (dispatch) => {
 
         dispatch({type: "deleteLectureSuccess", payload: data.message})
     } catch (error) {
-        dispatch({type: "deleteLectureFail", payload: error.response.data.message })
+        dispatch({type: "deleteLectureFail", payload: error?.response?.data?.message })
     }
 }
 
@@ -77,7 +77,7 @@ export const getAllUsers = () => async (dispatch) => {
 
         dispatch({type: "getAllUsersSuccess", payload: data.users})
     } catch (error) {
-        dispatch({type: "getAllUsersFail", payload: error.response.data.message })
+        dispatch({type: "getAllUsersFail", payload: error?.response?.data?.message })
     }
 }
 
@@ -91,7 +91,7 @@ export const updateUserRole = (id) => async (dispatch) => {
 
         dispatch({type: "updateUserRoleSuccess", payload: data.message})
     } catch (error) {
-        dispatch({type: "updateUserRoleFail", payload: error.response.data.message })
+        dispatch({type: "updateUserRoleFail", payload: error?.response?.data?.message })
     }
 }
 
@@ -105,7 +105,7 @@ export const deleteUser = (id) => async (dispatch) => {
 
         dispatch({type: "deleteUserSuccess", payload: data.message})
     } catch (error) {
-        dispatch({type: "deleteUserFail", payload: error.response.data.message })
+        dispatch({type: "deleteUserFail", payload: error?.response?.data?.message })
     }
 }
 
@@ -119,6 +119,6 @@ export const getDashBoardStats = () => async (dispatch) => {
 
         dispatch({type: "getAdminStatsSuccess", payload: data})
     } catch (error) {
-        dispatch({type: "getAdminStatsFail", payload: error.response.data.message })
+        dispatch({type: "getAdminStatsFail", payload: error?.response?.data?.message })
     }
 }

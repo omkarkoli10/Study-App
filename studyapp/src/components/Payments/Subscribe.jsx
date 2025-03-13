@@ -1,10 +1,11 @@
-import { Box, Button, Container, Heading, Text, VStack } from '@chakra-ui/react'
-import React, { useEffect, useState } from 'react'
-import {useDispatch, useSelector} from "react-redux"
-import { server } from '../../redux/store'
-import { buySubscription } from '../../redux/actions/user'
-import toast from "react-hot-toast"
-import axios from "axios"
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import toast from "react-hot-toast";
+import { Box, Button, Container, Heading, Text, VStack } from "@chakra-ui/react";
+import { useDispatch, useSelector } from "react-redux";
+import { buySubscription } from "../../redux/actions/user";
+import { server } from "../../redux/store";
+
 const Subscribe = ({user}) => {
     const dispatch = useDispatch();
     const [key, setKey] = useState("")
@@ -74,7 +75,7 @@ const Subscribe = ({user}) => {
         </Box>
 
         <Box bg={"aqua"} p={"4"} css={{ borderRadius: "0 0 8px 8px"}} >
-            <Heading textTransform={"uppercase"} color={"black"} size={"md"} children={"100% refund at camcellation"} />
+            <Heading textTransform={"uppercase"} color={"black"} size={"md"} children={"100% refund at cancellation"} />
 
             <Text fontSize={"xs"} color="aqua" children="Terms and conditions Apply" />
         </Box>
